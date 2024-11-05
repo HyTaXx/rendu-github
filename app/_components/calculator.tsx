@@ -1,5 +1,5 @@
-"use client";
 // components/Calculator.tsx
+"use client";
 import { useState } from 'react';
 
 export default function Calculator() {
@@ -36,15 +36,15 @@ export default function Calculator() {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 bg-gray-100 rounded shadow-lg max-w-sm mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Calculator</h2>
+    <div className="flex flex-col items-center p-8 bg-gray-800 rounded-lg shadow-xl max-w-md mx-auto text-gray-100">
+      <h2 className="text-3xl font-bold mb-6 text-orange-400">Calculator</h2>
 
       <input
         type="number"
         placeholder="Enter first number"
         value={num1}
         onChange={(e) => setNum1(e.target.value)}
-        className="mb-2 p-2 border rounded w-full"
+        className="mb-4 p-3 border border-gray-600 rounded-lg w-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-400"
       />
 
       <input
@@ -52,13 +52,13 @@ export default function Calculator() {
         placeholder="Enter second number"
         value={num2}
         onChange={(e) => setNum2(e.target.value)}
-        className="mb-2 p-2 border rounded w-full"
+        className="mb-4 p-3 border border-gray-600 rounded-lg w-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-400"
       />
 
       <select
         value={operation}
         onChange={(e) => setOperation(e.target.value)}
-        className="mb-4 p-2 border rounded w-full"
+        className="mb-6 p-3 border border-gray-600 rounded-lg w-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-400"
       >
         <option value="add">Addition</option>
         <option value="subtract">Subtraction</option>
@@ -68,13 +68,13 @@ export default function Calculator() {
 
       <button
         onClick={handleCalculation}
-        className="mb-4 bg-blue-500 text-white p-2 rounded w-full hover:bg-blue-600"
+        className="mb-6 bg-orange-500 text-white p-3 rounded-lg w-full hover:bg-orange-600 font-semibold"
       >
         Calculate
       </button>
 
       {result !== null && (
-        <div className="text-xl font-semibold">
+        <div className="text-2xl font-semibold text-orange-400">
           Result: {result}
         </div>
       )}
