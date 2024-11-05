@@ -1,6 +1,7 @@
 // components/Calculator.tsx
 "use client";
 import { useState } from 'react';
+import { calculate } from './calculate';
 
 export default function Calculator() {
   const [num1, setNum1] = useState<string>('');
@@ -11,28 +12,8 @@ export default function Calculator() {
   const handleCalculation = () => {
     const n1 = parseFloat(num1);
     const n2 = parseFloat(num2);
-
-    if (isNaN(n1) || isNaN(n2)) {
-      setResult('Invalid input');
-      return;
-    }
-
-    switch (operation) {
-      case 'add':
-        setResult(n1 + n2);
-        break;
-      case 'subtract':
-        setResult(n1 - n2);
-        break;
-      case 'multiply':
-        setResult(n1 * n2);
-        break;
-      case 'divide':
-        setResult(n2 !== 0 ? n1 / n2 : 'Cannot divide by zero');
-        break;
-      default:
-        setResult('Select an operation');
-    }
+    const calcResult = calculate(n1, n2, operation);
+    setResult(calcResult);
   };
 
   return (
