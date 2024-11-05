@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projet de Calculatrice Web
 
-## Getting Started
+## Membres du groupe
 
-First, run the development server:
+| NOM | Prénom |
+|-----|--------|
+| SIMON | Adam   |
+| NOBRE | Armand   |
+
+## Lien vers le projet
+
+[Rendu Calculatrice github](https://github.com/HyTaXx/rendu-github)  
+
+## Architecture et Choix Techniques
+
+Ce projet est une calculatrice web développée en utilisant **Next.js** pour le framework React et **Tailwind CSS** pour le style. L'architecture est organisée comme suit :
+
+- `app/` : Contient l'ensemble de l'application Next.js.
+- `components/` : Contient les composants réutilisables de l'application.
+- `Calculator/` : Comprend la logique de calcul et le composant de la calculatrice.
+
+### Étapes d'Installation
+
+Pour exécuter et tester le projet localement, suivez ces étapes :
+
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/username/repo-name.git
+   cd repo-name
+    ```
+2. Installer les dépendences
+    ```bash
+   npm install
+    ```
+3. Démarrez le serveur de développement :
+    ```bash
+   npm run dev
+    ```
+
+## Version Déployée sur Vercel
+La version déployée de l'application est accessible à l'adresse suivante : https://votre-projet.vercel.app
+(Remplacez par l'URL de votre déploiement Vercel)
+
+Configuration de la Pipeline CI/CD
+La pipeline CI/CD a été configurée avec GitHub Actions pour automatiser le processus de déploiement sur Vercel. Les étapes clés de la pipeline sont :
+
+Install : Installe les dépendances nécessaires.
+
+Test : Exécute les tests automatisés.
+
+Lint : Vérifie le code pour les erreurs de style.
+*NB: Le lint a été retiré de la pipeline car il causait des problèmes de dernières minutes*
+
+Build : Construit le projet.
+
+Deploy : Déploie le projet sur Vercel, mais uniquement pour les versions taguées.
+
+Processus de Déploiement
+Pour déployer la dernière version de l'application, créez une nouvelle balise Git (tag) et poussez-la sur le dépôt :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git tag v1.0.0
+git push origin v1.0.0
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
